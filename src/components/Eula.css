@@ -1,0 +1,14 @@
+.eula_div {
+    position: absolute;
+    background-color: white;
+    color: black;
+    width: 743px;
+    top: 258px;
+    padding: 20px;
+}
+
+.eula_close_img {
+    position: relative;
+    top: -15px;
+    left: -18px;
+}
