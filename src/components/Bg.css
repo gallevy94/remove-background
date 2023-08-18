@@ -218,15 +218,6 @@
     cursor: pointer;
 }
 
-.logo_img {
-    position: relative;
-    top: -9px;
-}
-
-.banner_img {
-    margin-top: 14px;
-    margin-left: 82px;
-}
 
 .input_file {
     display: none;
@@ -306,3 +297,4 @@
     top: 11px;
     cursor: pointer;
 }
+

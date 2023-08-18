@@ -12,14 +12,9 @@ function No_bg(props) {
   }
 
   function change_color(e) {
-    // console.log(e.target.value);
     setcolor(e.target.value);
     props.send_color_func(color);
   }
-
-  // useEffect(() => {
-  //     props.send_color_func(color);
-  // },[color]);
 
   return (
     <div className="no_bg_tab">
@@ -28,7 +23,13 @@ function No_bg(props) {
         אל תשכח להוריד את הקבצים שלך. הם ימחקו אוטומטית כשתצא מהדף
       </span>
 
-      <div className="color_div" onClick={choose_color}>
+      <div
+        className="color_div"
+        onClick={choose_color}
+        style={{
+          visibility: props.image_name ? "hidden" : "",
+        }}
+      >
         <span className="display_text"> צבע רקע </span>
 
         <span className="display_color" style={{ backgroundColor: color }}>
@@ -56,7 +57,7 @@ function No_bg(props) {
       {/* 
         <div className="loading"> 
             <div className='loading_inner'>
-               39%  
+                 
             </div>
         </div> */}
     </div>

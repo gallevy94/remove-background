@@ -2,18 +2,12 @@ import "./Bg.css";
 import { useState, useRef } from "react";
 import axios from "axios";
 
-import logo from "../assets/logo.png";
-import banner from "../assets/banner.png";
-
 import Original from "./Original";
-
 import No_bg from "./No_bg";
-
 import Eula from "./Eula";
+import Banner from "./Banner";
 
 import download_folder from "../assets/Downloads_Folder.png";
-import not_robot from "../assets/not_robot.png";
-
 import close from "../assets/close1.png";
 
 function Bg() {
@@ -28,8 +22,6 @@ function Bg() {
   const [color_to_api, setcolor_to_api] = useState("");
 
   const [show_popup, setshow_popup] = useState(false);
-
-  const [checkbox_val, setcheckbox_val] = useState(false);
 
   function change_tab(e) {
     if (e.target.classList.value == "no_bg") {
@@ -109,14 +101,6 @@ function Bg() {
     }
   }
 
-  function checkbox_checked() {
-    if (checkbox_val == false) {
-      setcheckbox_val(true);
-    } else {
-      setcheckbox_val(false);
-    }
-  }
-
   return (
     <div className="Bg">
       <div className="header">
@@ -177,11 +161,7 @@ function Bg() {
               {" "}
               על ידי העלאת תמונה אתה מסכים לתנאים וההגבלות{" "}
             </span>
-            {show_eula ? (
-              <Eula close_popup={close_popup_fun} />
-            ) : (
-              ""
-            )}
+            {show_eula ? <Eula close_popup={close_popup_fun} /> : ""}
           </div>
         </div>
 
@@ -220,11 +200,7 @@ function Bg() {
         </div>
       </div>
 
-      <div className="footer">
-        <img src={logo} className="logo_img" />
-
-        <img src={banner} className="banner_img" />
-      </div>
+      <Banner />
 
       {show_popup ? (
         <>
@@ -243,16 +219,6 @@ function Bg() {
               האם להוריד את התמונה?
             </div>
             <div className="download_image_popup_btn_cont">
-              <input
-                type="checkbox"
-                className="checkbox"
-                onChange={checkbox_checked}
-              />
-              <span> אני לא רובוט </span>
-
-              <img src={not_robot} />
-              <br />
-
               <button className="cancel" onClick={close_popup}>
                 {" "}
                 ביטול{" "}
@@ -260,13 +226,13 @@ function Bg() {
 
               <button
                 className="aprove"
-                style={{
-                  backgroundColor: checkbox_val == false ? "gray" : "#3f51b5",
-                }}
+                disabled={image_name ? false : true}
                 onClick={download_image_func}
+                style={{
+                  background: image_name ? "#3f51b5" : "gray",
+                }}
               >
-                {" "}
-                אישור{" "}
+                אישור
               </button>
             </div>
           </div>

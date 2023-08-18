@@ -1,10 +1,9 @@
 import "./Header.css";
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import axios from "axios";
 
 function Header({ color_to_api, imageName, setImageName }) {
   const inputElement = useRef();
-    // const [imageName, setimageName] = useState("");
 
   function upload_file() {
     inputElement.current.click();

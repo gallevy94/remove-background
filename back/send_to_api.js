@@ -23,7 +23,7 @@ module.exports = async function send_to_api(image_path, fileName, color) {
     responseType: "arraybuffer",
     headers: {
       ...formData.getHeaders(),
-      "X-Api-Key": "ovVfhVnXw1aNaL8pTXahVstt",
+      "X-Api-Key": "ovVfhVnXw1aNaL8pTXahVstt ",
     },
     encoding: null,
   })
