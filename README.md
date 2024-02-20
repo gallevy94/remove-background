@@ -1,4 +1,4 @@
-Front End React Website.
+FullStack React Website built with react, node.js, and express.js.
 
 Background remover website, allows you to remove the background of a photo you choose. You can even add a specific background color of your choice.
 
